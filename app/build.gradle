@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.example.marcatruko'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.marcatruko"
         minSdk 28
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -24,6 +24,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {

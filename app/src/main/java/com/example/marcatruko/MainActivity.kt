@@ -113,9 +113,12 @@ private fun App() {
                     }
                     trucoValue = 1
                 }, onPointsDown = {
-                    if (teamOnePoints != 0) {
-                        teamOnePoints -= 1
+                    teamOnePoints -= 1
+                    if (teamOnePoints == -1) {
+                        teamOneWins--
+                        resetPoints()
                     }
+
                 })
                 Divider(
                     modifier = Modifier
@@ -130,8 +133,10 @@ private fun App() {
                     }
                     trucoValue = 1
                 }, onPointsDown = {
-                    if (teamTwoPoints != 0) {
-                        teamTwoPoints -= 1
+                    teamTwoPoints -= 1
+                    if (teamTwoPoints == -1) {
+                        teamTwoWins--
+                        resetPoints()
                     }
                 })
             }
